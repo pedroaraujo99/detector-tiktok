@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Detector IA</title>
+
+  <style>
+    body {
+      background: #111;
+      color: white;
+      font-family: Arial;
+      padding: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Detector TikTok IA</h1>
+
+  <button>
+    Iniciar análise
+  </button>
+  
+<script>
+
+const botao = document.querySelector("button");
+
+botao.addEventListener("click", () => {
+
+  window.electronAPI.iniciar();
+
+});
+
+</script>
+
+</body>
+
+</html>

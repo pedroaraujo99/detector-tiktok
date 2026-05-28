@@ -5,7 +5,7 @@ const { capturarTexto } = require("./scraper");
 async function analisarPerfilCompleto(browser, perfilUrl) {
   const page = await browser.newPage();
   await page.goto(perfilUrl);
-  await page.waitForTimeout(8000);
+  await page.waitForTimeout(30000);
 
   await capturarPerfil(browser, usuario);
 

@@ -31,7 +31,7 @@ const { capturarPerfil } = require("./core/captureService");
   const page = await browser.newPage();
   await page.goto("https://www.tiktok.com/search?q=plataforma");
 
-  console.log("🛑 Resolva captcha/login...");
+  console.log(" Resolva captcha/login...");
   await page.waitForTimeout(30000);
 
   // scroll forte
@@ -55,8 +55,8 @@ const { capturarPerfil } = require("./core/captureService");
     const vp = await browser.newPage();
     await vp.goto(link);
 
-    console.log("🛑 Resolva captcha se aparecer...");
-    await vp.waitForTimeout(20000);
+    console.log(" Resolva captcha se aparecer...");
+    await vp.waitForTimeout(40000);
 
     const texto = await capturarTexto(vp);
     const linksPagina = await vp.$$eval("a", els => els.map(e => e.href));
@@ -114,7 +114,7 @@ const { capturarPerfil } = require("./core/captureService");
       coletados++;
 
       if (score >= 5) {
-        console.log("⚠️ SUSPEITO:", link);
+        console.log(" SUSPEITO:", link);
 
         await capturarPerfil(browser, usuario);
 
@@ -124,7 +124,7 @@ const { capturarPerfil } = require("./core/captureService");
         );
 
         if (perfil.taxa >= 0.6 || perfil.suspeitos >= 3) {
-          console.log("🚨 PERFIL ALTAMENTE SUSPEITO:", usuario);
+          console.log(" PERFIL ALTAMENTE SUSPEITO:", usuario);
         }
 
       } else {

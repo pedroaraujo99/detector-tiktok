@@ -16,7 +16,12 @@ function analisar(texto) {
     "blaze",
     "stake",
     "tigrinho",
-    "roleta"
+    "roleta",
+    "bit.ly",
+    "cutt.ly",
+    "tinyurl",
+    "bet",
+    "slot",
   ];
 
   for (let p of palavras) {

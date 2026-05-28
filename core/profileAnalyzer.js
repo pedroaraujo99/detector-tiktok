@@ -7,7 +7,9 @@ async function analisarPerfilCompleto(browser, perfilUrl) {
   await page.goto(perfilUrl);
   await page.waitForTimeout(30000);
 
-  await capturarPerfil(browser, usuario);
+  const usuario = perfilUrl.match(/@([^\/]+)/)?.[1];
+  if(usuario) await
+  capturarPerfil(browser, usuario);
 
   const videos = await page.$$eval("a", els =>
     els.map(el => el.href)
